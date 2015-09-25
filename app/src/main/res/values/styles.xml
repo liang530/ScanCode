@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="popwin_nearpenson_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popupwin_nearperson_show</item>
+        <item name="android:windowExitAnimation">@anim/popupwin_nearperson_exit</item>
+    </style>
+
+    <!--分割线样式-->
+    <style name="lineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">#cccccc</item>
+    </style>
+
+
+    <!-- 只有背景的对话框样式 -->
+    <style name="dialog_show_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 设置dialog的半透明背景的灰度 -->
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+    <style name="my_style">
+        <item name="android:windowEnterAnimation">@anim/shouquan_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/shouquan_dialog_exit</item>
+    </style>
+
+</resources>
