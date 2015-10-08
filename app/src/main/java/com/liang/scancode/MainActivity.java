@@ -11,20 +11,11 @@ import com.liang.scancode.utils.Constant;
 
 
 public class MainActivity extends Activity {
-    /**
-     * 扫描运单号
-     */
-    private static final int TYPE_YUNDAN = 2;
-    /**
-     * 扫描商品编号
-     */
-    private static final int TYPE_SHANGPINNUM = 3;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         int mode = getIntent().getIntExtra(Constant.REQUEST_SCAN_MODE, Constant.REQUEST_SCAN_MODE_ALL_MODE);
 
 

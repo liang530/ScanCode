@@ -19,7 +19,7 @@ import com.google.zxing.WriterException;
 import java.io.UnsupportedEncodingException;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import com.liang.scancode.zxing.encode.EncodingHandler;
 
@@ -27,20 +27,20 @@ import com.liang.scancode.zxing.encode.EncodingHandler;
  * Created by 刘红亮 on 2015/9/24 14:37.
  */
 public class CreateCodeActivity extends Activity {
-    @InjectView(R.id.et_code_key)
+    @Bind(R.id.et_code_key)
     EditText etCodeKey;
-    @InjectView(R.id.btn_create_code)
+    @Bind(R.id.btn_create_code)
     Button btnCreateCode;
-    @InjectView(R.id.iv_2_code)
+    @Bind(R.id.iv_2_code)
     ImageView iv2Code;
-    @InjectView(R.id.iv_bar_code)
+    @Bind(R.id.iv_bar_code)
     ImageView ivBarCode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_code);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
     @OnClick({R.id.btn_create_code,R.id.btn_create_code_and_img})
     public void clickListener(View view){

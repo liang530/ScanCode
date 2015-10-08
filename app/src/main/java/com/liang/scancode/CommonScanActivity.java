@@ -34,7 +34,7 @@ import android.widget.Toast;
 import com.google.zxing.Result;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import com.liang.scancode.utils.Constant;
 import com.liang.scancode.zxing.ScanListener;
 import com.liang.scancode.zxing.ScanManager;
@@ -59,19 +59,19 @@ public final class CommonScanActivity extends Activity implements ScanListener, 
     TextView qrcode_ic_back;
     final int PHOTOREQUESTCODE = 1111;
 
-    @InjectView(R.id.service_register_rescan)
+    @Bind(R.id.service_register_rescan)
     Button rescan;
-    @InjectView(R.id.scan_image)
+    @Bind(R.id.scan_image)
     ImageView scan_image;
-    @InjectView(R.id.authorize_return)
+    @Bind(R.id.authorize_return)
     ImageView authorize_return;
     private int scanMode;//扫描模型（条形，二维码，全部）
 
-    @InjectView(R.id.common_title_TV_center)
+    @Bind(R.id.common_title_TV_center)
     TextView title;
-    @InjectView(R.id.scan_hint)
+    @Bind(R.id.scan_hint)
     TextView scan_hint;
-    @InjectView(R.id.tv_scan_result)
+    @Bind(R.id.tv_scan_result)
     TextView tv_scan_result;
 
 
@@ -83,7 +83,7 @@ public final class CommonScanActivity extends Activity implements ScanListener, 
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_scan_code);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         scanMode=getIntent().getIntExtra(Constant.REQUEST_SCAN_MODE,Constant.REQUEST_SCAN_MODE_ALL_MODE);
         initView();
     }
@@ -132,8 +132,6 @@ public final class CommonScanActivity extends Activity implements ScanListener, 
         super.onPause();
         scanManager.onPause();
     }
-
-
     /**
      *
      */
@@ -154,16 +152,12 @@ public final class CommonScanActivity extends Activity implements ScanListener, 
             }
             scan_image.setImageBitmap(barcode);
         }
-        jumpTo(rawResult.getText());
-    }
-
-    //扫描成功跳的界面
-    public void jumpTo(String code) {
         rescan.setVisibility(View.VISIBLE);
         scan_image.setVisibility(View.VISIBLE);
         tv_scan_result.setVisibility(View.VISIBLE);
-        tv_scan_result.setText("结果："+code);
+        tv_scan_result.setText("结果："+rawResult.getText());
     }
+
     void startScan() {
         if (rescan.getVisibility() == View.VISIBLE) {
             rescan.setVisibility(View.INVISIBLE);
@@ -185,17 +179,6 @@ public final class CommonScanActivity extends Activity implements ScanListener, 
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         startActivityForResult(intent, requestCode);
-//        Intent innerIntent = new Intent(Intent.ACTION_GET_CONTENT); //"android.intent.action.GET_CONTENT"
-//        if (Build.VERSION.SDK_INT < 19) {
-//            innerIntent.setAction(Intent.ACTION_GET_CONTENT);
-//        } else {
-//            innerIntent.setAction(Intent.ACTION_OPEN_DOCUMENT);
-//        }
-//        String IMAGE_UNSPECIFIED = "image/*";
-//        innerIntent.setType(IMAGE_UNSPECIFIED);
-//        Intent wrapperIntent = Intent.createChooser(innerIntent, null);
-//        startActivityForResult(wrapperIntent, requestCode);
-
     }
 
     @Override
