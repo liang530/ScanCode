@@ -7,4 +7,11 @@
     4.扫描后可得到扫描的截图！<br/>
     5.支持连续扫描！<br/>
     6.在一个项目中可多处使用，根据CommonScanActivity在多写一个自己的扫描界面就行了！<br/>
+#项目截图
+![](https://github.com/guodongxiaren/ImageCache/raw/master/images/main.png)<br/>
 
+![](https://github.com/guodongxiaren/ImageCache/raw/master/images/createCode.png)<br/>
+![](https://github.com/guodongxiaren/ImageCache/raw/master/images/scanCode.png)<br/>
+![](https://github.com/guodongxiaren/ImageCache/raw/master/images/scan2code.png.png)<br/>
+![](https://github.com/guodongxiaren/ImageCache/raw/master/images/scan_bar_code.png)<br/>
+![](https://github.com/guodongxiaren/ImageCache/raw/master/images/scan_photo.png)<br/>
