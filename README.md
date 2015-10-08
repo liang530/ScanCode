@@ -12,6 +12,6 @@
 
 ![](https://github.com/liang530/ScanCode/raw/master/images/createCode.png)<br/>
 ![](https://github.com/liang530/ScanCode/raw/master/images/scanCode.png)<br/>
-![](https://github.com/liang530/ScanCode/raw/master/images/scan2code.png.png)<br/>
+![](https://github.com/liang530/ScanCode/raw/master/images/scan2code.png)<br/>
 ![](https://github.com/liang530/ScanCode/raw/master/images/scan_bar_code.png)<br/>
 ![](https://github.com/liang530/ScanCode/raw/master/images/scan_photo.png)<br/>
